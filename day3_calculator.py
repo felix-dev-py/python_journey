@@ -11,9 +11,8 @@ def divide(a, b):
     return a / b
 
 def main():
-    symbol = ''
-    while symbol != 'q':
-        symbol = str(input("Enter +, -, *, / or q for quit: "))
+    while True:
+        symbol = input("Enter +, -, *, / or q for quit: ")
         if symbol == 'q':
             break
         try:
