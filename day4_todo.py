@@ -12,11 +12,11 @@ def mark_done(tasks, index):
     tasks[index-1]["done"] = True
 
 def delete_task(tasks, index):
-    tasks.pop(index)
+    tasks.pop(index-1)
 
 def main():
-    try:
-        while True:
+    while True:
+        try:
             user_number = int(input("" \
             "--------------------------\n" \
             "1. Показать задачи;\n" \
@@ -31,17 +31,17 @@ def main():
             elif user_number == 2:
                 user_title = input("Input the title of task: ")
                 while user_title == "":
-                    user_title = input("Input not empty title of the task!: ")
+                    user_title = input("Input not empty title ofthe    task!: ")
                 add_task(tasks, user_title)
             elif user_number == 3:
                 try:
-                    user_index = int(input("Which task in list is done?: "))
+                    user_index = int(input("Which task in list isdone? : "))
                     mark_done(tasks, user_index)
                 except IndexError:
                     print("You can only input numbers from tasks!")
             elif user_number == 4:
                 try:
-                    user_delete_index = int(input("What is the index of the task being deleted?: "))
+                    user_delete_index = int(input("What is theindex of     the task being deleted?: "))
                     delete_task(tasks, user_delete_index)
                 except IndexError:
                     print("You can only input numbers from tasks!")
@@ -49,7 +49,8 @@ def main():
                 break
             else:
                 print("You should input only numbers by 1 to 5!\n")
-    except TypeError:
-        print("You should input only numbers by 1 to 5.\n")
+        except ValueError:
+            print("You should input only numbers by 1 to 5.\n")
+            continue
 
 if __name__ == "__main__": main()
