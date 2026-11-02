@@ -7,11 +7,12 @@ profile = {
 
 profile["age"] = 31
 profile["email"] = "rustam@gmail.com"
-print(profile.items())
+for key, value in profile.items():
+    print(f"{key}: {value}")
 
-def describe(profl):
-    skills = ", ".join(profl.get("skills"))
-    return f"{profl.get('name')}, {profl.get('age')} years, from {profl.get('city')}. Skills: {skills}"
+def describe(profile):
+    skills = ", ".join(profile.get("skills"))
+    return f"{profile.get('name')}, {profile.get('age')} years, from {profile.get('city')}. Skills: {skills}"
 
 print()
 print(describe(profile))
