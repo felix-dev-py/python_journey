@@ -70,20 +70,20 @@ def main():
             try:
                 user_index = int(input("Which task in list is done? : "))
                 mark_done(tasks, user_index)
+                save_tasks(tasks)
             except IndexError:
                 print("You can only input numbers from tasks!")
             except ValueError:
                 print("You can only input numbers from tasks!")
-            save_tasks(tasks)
         elif user_number == 4:
             try:
                 user_delete_index = int(input("What is the index of the task being deleted?: "))
                 delete_task(tasks, user_delete_index)
+                save_tasks(tasks)
             except IndexError:
                 print("You can only input numbers from tasks!")
             except ValueError:
                 print("You can only input numbers from tasks!")
-            save_tasks(tasks)
         elif user_number == 5:
             break
         else:
