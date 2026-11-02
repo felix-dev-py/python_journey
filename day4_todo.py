@@ -34,7 +34,10 @@ def main():
             print("You should input only numbers by 1 to 5.\n")
             continue
         if user_number == 1:
-            show_tasks(tasks)
+            if not tasks: 
+                print("Список пуст")
+            else:
+                show_tasks(tasks)
         elif user_number == 2:
             user_title = input("Input the title of task: ")
             while user_title == "":
@@ -61,4 +64,5 @@ def main():
         else:
             print("You should input only numbers by 1 to 5!\n")
 
-if __name__ == "__main__": main()
+if __name__ == "__main__": 
+    main()
